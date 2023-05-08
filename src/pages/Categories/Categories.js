@@ -1,29 +1,28 @@
-import React, { Input, useState, useEffect } from "react";
-import { SafeAreaView, Text, FlatList } from 'react-native';
+import React from "react";
+import { SafeAreaView, Text, FlatList, ActivityIndicator } from 'react-native';
 import styles from './Categories.style';
 
 import Config from "react-native-config";
-import axios from "axios";
+
 
 import CategoryCard from "../../components/CategoryCard/CategoryCard";
+import useFetch from "../../hooks/useFetch/useFetch";
 
 
 function Categories() {
-    const [data, setData] = useState([]);
 
-    useEffect(() => {
-        fetchData();
-    }, []);
-
-    const fetchData = async () => {
-        const { data: categoriesData } = await axios.get(Config.API_URL);
-        setData(categoriesData)
-
-    }
+    const { loading, data, error } = useFetch(Config.API_URL)
+    console.log("render");
+    console.log({ loading, data: data.length, error });
+    console.log("-----------")
 
     const renderCategories = ({ item }) => <CategoryCard categories={item} />;
 
-
+    if (loading) {
+        return <ActivityIndicator size="large" />
+    } if (error) {
+        return <Text>{error}</Text>
+    }
 
     return (
         <SafeAreaView style={styles.container}>
