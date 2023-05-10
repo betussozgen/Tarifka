@@ -11,14 +11,17 @@ import Loading from "../../components/Loading/Loading";
 import Error from "../../components/Error/Error";
 
 
-function Categories() {
+function Categories({ navigation }) {
 
     const { loading, data, error } = useFetch(Config.API_URL)
-    console.log("render");
-    console.log({ loading, data: data.length, error });
-    console.log("-----------")
 
-    const renderCategories = ({ item }) => <CategoryCard categories={item} />;
+    const handleCategoriesSelect = () => {
+        navigation.navigate('Meals')
+
+    }
+
+
+    const renderCategories = ({ item }) => <CategoryCard categories={item} onSelect={handleCategoriesSelect} />;
 
     if (loading) {
         return <Loading />
