@@ -7,6 +7,8 @@ import Config from "react-native-config";
 
 import CategoryCard from "../../components/CategoryCard/CategoryCard";
 import useFetch from "../../hooks/useFetch/useFetch";
+import Loading from "../../components/Loading/Loading";
+import Error from "../../components/Error/Error";
 
 
 function Categories() {
@@ -19,9 +21,9 @@ function Categories() {
     const renderCategories = ({ item }) => <CategoryCard categories={item} />;
 
     if (loading) {
-        return <ActivityIndicator size="large" />
+        return <Loading />
     } if (error) {
-        return <Text>{error}</Text>
+        return <Error />
     }
 
     return (
