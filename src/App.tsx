@@ -34,9 +34,29 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name='Categories' component={Categories} />
-        <Stack.Screen name='Detail' component={Detail} />
-        <Stack.Screen name='Meals' component={Meals} />
+        <Stack.Screen
+          name='Categories'
+          component={Categories}
+          options={{
+            title: 'Categories',
+            headerStyle: { backgroundColor: 'white' },
+            headerTitleStyle: { color: 'orange' },
+          }} />
+        <Stack.Screen name='Detail'
+          component={Detail}
+          options={{
+            title: 'Detail',
+            headerStyle: { backgroundColor: 'white' },
+            headerTitleStyle: { color: 'orange' },
+            headerTintColor: 'orange',
+          }} />
+        <Stack.Screen name='Meals' component={Meals}
+          options={{
+            title: 'Meals',
+            headerStyle: { backgroundColor: 'white' },
+            headerTitleStyle: { color: 'orange' },
+            headerTintColor: 'orange',
+          }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
