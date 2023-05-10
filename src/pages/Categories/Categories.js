@@ -13,16 +13,19 @@ import Error from "../../components/Error/Error";
 
 function Categories({ navigation }) {
 
+    // To fetch data
     const { loading, data, error } = useFetch(Config.API_URL)
 
-    const handleCategoriesSelect = () => {
-        navigation.navigate('Meals')
+    // Go to the Detail page.
+    const handleCategoriesSelect = (id) => {
+        navigation.navigate('Meals', { id })
 
     }
 
+    //To render a meal card.
+    const renderCategories = ({ item }) => <CategoryCard categories={item} onSelect={() => handleCategoriesSelect(item.strCategory)} />;
 
-    const renderCategories = ({ item }) => <CategoryCard categories={item} onSelect={handleCategoriesSelect} />;
-
+    //Animations
     if (loading) {
         return <Loading />
     } if (error) {
@@ -32,7 +35,10 @@ function Categories({ navigation }) {
     return (
         <SafeAreaView style={styles.container}>
 
-            <FlatList data={data.categories} renderItem={renderCategories} />
+            <FlatList
+                data={data.categories}
+                renderItem={renderCategories}
+                keyExtractor={item => (item.idCategory)} />
         </SafeAreaView>
     )
 }

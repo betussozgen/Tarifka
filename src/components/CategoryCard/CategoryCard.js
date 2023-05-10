@@ -22,3 +22,5 @@ const CategoryCard = ({ categories, onSelect }) => {
 }
 
 export default CategoryCard;
+
+
