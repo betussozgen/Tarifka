@@ -14,6 +14,8 @@ function Meals({ route, navigation }) {
 
     const { id } = route.params;
 
+    console.log(id)
+
     // Gets the category meals
     const { loading, data, error } = useFetch('http://www.themealdb.com/api/json/v1/1/filter.php?i=' + id);
 
@@ -40,7 +42,7 @@ function Meals({ route, navigation }) {
 
                 data={data.meals}
                 renderItem={renderMeals}
-                keyExtractor={item => (item.idMeal)}
+            // keyExtractor={item => (item.idMeal)}
             />
         </SafeAreaView>
     )
@@ -50,3 +52,6 @@ function Meals({ route, navigation }) {
 export default Meals;
 
 
+
+
+// {"strMeal":" Bubble & Squeak","strMealThumb":"https:\/\/www.themealdb.com\/images\/media\/meals\/xusqvw1511638311.jpg","idMeal":"52885"}

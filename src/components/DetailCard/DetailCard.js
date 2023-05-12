@@ -6,13 +6,16 @@ const DetailCard = ({ detail }) => {
 
     return (
         <View style={styles.container}>
-            <Image style={styles.image} />
-            <Text style={styles.title}></Text>
-            <Text style={styles.country}></Text>
-            <Text style={styles.desc}></Text>
+            <Image style={styles.image}
+                source={{ uri: detail.strMealThumb }} />
+            <Text style={styles.title}>{detail.strMeal}</Text>
+            <Text style={styles.country}>{detail.strArea}</Text>
+            <Text style={styles.desc}>{detail.strInstructions}</Text>
+            {/* <Text style={styles.youtube}>{detail.strYoutube}</Text> */}
         </View>
 
     )
 
 }
 export default DetailCard;
+

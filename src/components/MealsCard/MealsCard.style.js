@@ -5,11 +5,8 @@ export default StyleSheet.create({
     container: {
         marginHorizontal: 10,
         marginBottom: 10,
-
-
     },
     image: {
-
         maxWidth: widthOfScreen,
         height: heightOfScreen / 5,
         borderTopLeftRadius: 20,
@@ -21,8 +18,6 @@ export default StyleSheet.create({
         width: '100%',
         position: 'absolute',
         bottom: 0,
-
-
     },
     title: {
         textAlign: 'center',
@@ -34,9 +29,6 @@ export default StyleSheet.create({
         fontWeight: '600',
         backgroundColor: '#424242',
         opacity: .6,
-        //flexDirection: 'row',
-        // borderTopLeftRadius: 20,
-        // borderTopRightRadius: 20,
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,
         textAlign: 'right',
