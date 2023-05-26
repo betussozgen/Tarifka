@@ -12,21 +12,21 @@ import styles from './Meals.style';
 
 function Meals({ route, navigation }) {
 
-    const { id } = route.params;
+    const meal = route.params.meal;
 
-    console.log(id)
+    console.log(meal)
 
     // Gets the category meals
-    const { loading, data, error } = useFetch('http://www.themealdb.com/api/json/v1/1/filter.php?i=' + id);
+    const { loading, data, error } = useFetch('http://www.themealdb.com/api/json/v1/1/filter.php?i=' + `${meal}`);
 
     // Go to the Detail page.
-    const handleDetailSelect = (idMeal) => {
-        navigation.navigate('Detail', { idMeal })
+    const handleDetailSelect = (detail) => {
+        navigation.navigate('Detail', { detail })
 
     }
 
     //To render a meal card.
-    const renderMeals = ({ item }) => <MealsCard meals={item} onSelect={() => handleDetailSelect(item.idMeal)} />;
+    const renderMeals = ({ item }) => <MealsCard meals={item} onSelect={() => handleDetailSelect(item.strMeal)} />;
 
 
     //Animations

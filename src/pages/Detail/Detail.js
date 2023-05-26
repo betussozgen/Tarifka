@@ -12,11 +12,11 @@ import DetailCard from "../../components/DetailCard/DetailCard";
 
 function Detail({ route }) {
 
-    const { idMeal } = route.params;
+    const detail = route.params.detail;
 
-    console.log(idMeal)
+    console.log(detail)
 
-    const { loading, data, error } = useFetch('https://www.themealdb.com/api/json/v1/1/search.php?s=' + idMeal)
+    const { loading, data, error } = useFetch(Config.API_DETAIL_URL + `${detail}`)
 
 
 
@@ -29,28 +29,27 @@ function Detail({ route }) {
     }
 
     //To render a meal card.
-    // const renderDetail = ({ item }) => <DetailCard detail={item} />;
+    const renderDetail = ({ item }) => <DetailCard detail={item} />;
 
 
     return (
-        // <View>
-        //     <FlatList
-        //         data={data.meals}
-        //         renderItem={renderDetail}
-        //     //keyExtractor={item => item.idMeal}
-        //     />
-        //     <Text>deneme</Text>
+
+        <FlatList
+            data={data.meals}
+            renderItem={renderDetail}
+            keyExtractor={item => item.idMeal}
+        />
+
+
+
+        // <View style={styles.container}>
+        //     {/* <Image style={styles.image}
+        //         source={{ uri: data.strMealThumb }} /> */}
+        //     <Text style={styles.title}>{data.strMeal}</Text>
+        //     <Text style={styles.country}>{data.strArea}</Text>
+        //     <Text style={styles.desc}>{data.strInstructions}</Text>
+        //     {/* <Text style={styles.youtube}>{detail.strYoutube}</Text> */}
         // </View>
-
-
-        <View style={styles.container}>
-            {/* <Image style={styles.image}
-                source={{ uri: data.strMealThumb }} /> */}
-            <Text style={styles.title}>{data.strMeal}</Text>
-            <Text style={styles.country}>{data.strArea}</Text>
-            <Text style={styles.desc}>{data.strInstructions}</Text>
-            {/* <Text style={styles.youtube}>{detail.strYoutube}</Text> */}
-        </View>
 
     )
 }
