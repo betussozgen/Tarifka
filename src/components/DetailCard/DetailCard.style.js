@@ -11,16 +11,28 @@ export default StyleSheet.create({
         height: deviceSize.height / 3,
     },
     title: {
-        fontSize: 25,
+        fontSize: 35,
         fontWeight: 'bold',
         color: 'red',
     },
     country: {
-        fontSize: 16,
+        fontSize: 26,
         fontWeight: 'bold',
         color: 'red',
     },
     desc: {
-        fontSize: 12,
+        fontSize: 20,
     },
+    YoutubeLinkBox: {
+        //borderBottomColor: 'red',
+        borderRadius: 8,
+        margin: 10,
+        padding: 10,
+        textAlign: 'center',
+        color: 'white',
+        fontSize: 20,
+        fontWeight: 'bold',
+        backgroundColor: 'red',
+
+    }
 })

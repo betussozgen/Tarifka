@@ -31,4 +31,5 @@ export default StyleSheet.create({
         paddingLeft: 15,
 
     },
+
 })

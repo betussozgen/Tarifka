@@ -14,11 +14,9 @@ export default StyleSheet.create({
         color: 'red',
     },
     country: {
-        fontSize: 16,
+        fontSize: 26,
         fontWeight: 'bold',
         color: 'red',
     },
-    desc: {
-        fontSize: 12,
-    },
+
 })
