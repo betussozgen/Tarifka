@@ -11,10 +11,9 @@ Yemek tarifi uygulaması. Uygulamanın açılış sayfasında yemek kategorileri
 
 
 # Proje Görseli:
-- Giriş Sayfası:
+
 
 ![Proje Görseli:](./src/assets/image/category.jpg)
-
 ![Proje Görseli:](./src/assets/image/Meals.jpg)
 
 ![Proje Görseli:](./src/assets/image/detail.jpg)
